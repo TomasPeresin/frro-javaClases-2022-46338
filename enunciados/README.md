@@ -4,17 +4,77 @@
 
 Mostrar por consola los 10 primeros números enteros y los 10 primeros números impares
 
+for (int i = 1; i <= 10; i++) {
+	System.out.println(i);			
+	}
+for (int i = 1; i <= 19;) {
+	System.out.println(i);
+	i = i + 2;
+	}
+
 **Ejercicio 2**
 
 Leer 10 palabras y mostrarlas en orden inverso al que fueron ingresadas.
+
+String[] linea = new String[10];
+Scanner lector = new Scanner(System.in);
+for (int i = 0; i < 10; i++) {
+	System.out.println("Ingresar letra");
+	linea[i] = lector.nextLine();
+     }
+for (int i = 9; i>=0; i--) {
+	System.out.println(linea[i]);
+     }    
+
 
 **Ejercicio 3**
 
 Leer 10 palabras, luego leer una nueva palabra e indicar si la misma ya había sido ingresada en las 10 primeras.
 
+String[] linea = new String[10];
+String txt;
+boolean b = false;
+Scanner lector = new Scanner(System.in);
+for (int i = 0; i < 10; i++) {
+	System.out.println("Ingresar palabra");
+	linea[i] = lector.nextLine();
+}
+System.out.println("Ingresar palabra a verificar");
+txt = lector.nextLine();
+for (int i = 0; i < 10; i++) {
+	if (linea[i].equals(txt)){
+		b = true;
+	}
+}
+if (b) {
+System.out.println("Su palabra esta en las otras");
+}
+else {System.out.println("No esta en las otras");}		
+}
+
 **Ejercicio 4**
 
 Leer un entero y luego una lista de 20 enteros. Guardar los mayores al número inicial y mostrarlos al final. Usar arrays, no otras colecciones.
+
+ArrayList<Integer> numero = new ArrayList<>();
+Scanner lector = new Scanner(System.in);
+String txt;
+int num, aux;
+System.out.println("Ingresar numero: ");
+txt = lector.nextLine();
+num = Integer.parseInt(txt);
+for(int i = 0; i < 20; i++) {
+	System.out.println("Ingresar numeros: ");
+	txt = lector.nextLine();
+	aux = Integer.parseInt(txt);
+	if (aux > num){
+	numero.add(aux);
+	}	 
+}
+for (int numeros : numero) {
+	System.out.println(numeros);
+}
+
 
 **Ejercicio 5a**
 
